@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Dashboard Interactivo</h1>
+
+<h2>Total General</h2>
+<canvas id="totalGeneral"></canvas>
+
+<h2>Participación Mensual (Todos los Meses)</h2>
+<canvas id="participacion"></canvas>
+
+<script>
+// Datos de ejemplo
+const meses = ["Enero","Febrero","Marzo","Abril"];
+const totalGeneral = [120, 150, 180, 200];
+const participacion = [30, 25, 20, 25];
+
+// Total General
+new Chart(document.getElementById("totalGeneral"), {
+    type: "line",
+    data: {
+        labels: meses,
+        datasets: [{ label: "Total General", data: totalGeneral }]
+    }
+});
+
+// Participación
+new Chart(document.getElementById("participacion"), {
+    type: "pie",
+    data: {
+        labels: meses,
+        datasets: [{ label: "Participación", data: participacion }]
+    }
+});
+</script>
+
+</body>
+</html>
